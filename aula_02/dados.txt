@@ -1,0 +1,27 @@
+Jogo 01
+
+Nome do jogo: Among Us
+Descriçao: Jogo inide de suspense
+Plataforma: windows, mac, ...
+Desejo Jogar: Sim
+Possui o jogo: Sim
+
+Desenvolvedora: Inner Soft
+Ano de fundação: 2018
+
+Engine: Unity 
+Site da engine: https://unity.com/
+
+Jogo 02
+
+Nome do jogo: Among Us
+Descriçao: Jogo inide de suspense
+Plataforma: windows, mac, ...
+Desejo Jogar: Sim
+Possui o jogo: Sim
+
+Desenvolvedora: Inner Soft
+Ano de fundação: 2018
+
+Engine: Unity
+Site da engine: https://unity.com/
