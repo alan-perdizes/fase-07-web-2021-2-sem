@@ -1,26 +1,21 @@
-require 'sequel' # requerer gems, certificar que está baixado
-
-# Criando a conexão de dados
-DB = sequel.connect('sqlite://biblioteca-games.db')
-
-DB.create_table :engines do
+DB.create_table? :engines do
   primary_key :id
   String :nome, size: 50
   String :site_engine, text: true
 end
 
-DB.cretate_table :desenvolvedores do
+DB.create_table? :desenvolvedores do
   primary_key :id
   String :nome, size: 50
   Integer :ano_funcacao
 end
 
-DB.create_table :plataformas do
+DB.create_table? :plataformas do
   primary_key :id
   String :nome, size: 20
 end
 
-DB.create_table :jogos do
+DB.create_table? :jogos do
   primary_key :id
   String :nome
   String :descricao, text: true
