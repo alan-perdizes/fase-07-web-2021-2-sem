@@ -1,0 +1,39 @@
+<h1>Plataformas</h1>
+<form>
+  <div>
+    <input
+      type="text"
+      name="plataforma"
+      placeholder="Digite aqui a sua plataforma"
+      required 
+    />
+    <button
+      type="submit"
+      formaction="/plataformas"
+      formmethod="POST"
+    >
+      Cadastrar
+    </button>
+  </div>
+</form>
+
+<br />
+
+<% unless @plataforma.empty? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @plataforma.each do |p| %>
+        <tr>
+          <td><%= p.id %></td>
+          <td><%= p.nome %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

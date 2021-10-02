@@ -1,0 +1,16 @@
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+# gem "rails"
+gem 'sequel'
+gem 'sqlite3'
+
+# Rotas da página
+gem 'sinatra'
+gem 'rack'
+
+group :development, :test do
+  gem "rerun"
+  gem "wdm" if Gem.win_platform?
+end

@@ -4,4 +4,5 @@ require 'sequel'
 DB = Sequel.sqlite("./db/biblioteca-games.db")
 require_relative "db/schema"
 
-require_relative "views/desenvolvedor.cmd.rb"
+require 'sinatra'
+require_relative 'config/routes'
