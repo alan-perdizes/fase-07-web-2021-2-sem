@@ -1,0 +1,47 @@
+<h1>enginess</h1>
+<form>
+  <div>
+    <input
+      type="text"
+      name="nome"
+      placeholder="Digite o nome da engine"
+      required 
+    />
+    <input
+      type="url"
+      name="site"
+      placeholder="Digite o site da engine"
+      required 
+    />
+    <button
+      type="submit"
+      formaction="/engines"
+      formmethod="POST"
+    >
+      Cadastrar
+    </button>
+  </div>
+</form>
+
+<br />
+
+<% unless @engines.empty? %>
+  <table>
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Site</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @engines.each do |p| %>
+        <tr>
+          <td><%= p.id %></td>
+          <td><%= p.nome %></td>
+          <td><%= p.site_engine %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>
