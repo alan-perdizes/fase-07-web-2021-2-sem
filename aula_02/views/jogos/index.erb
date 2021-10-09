@@ -1,0 +1,53 @@
+<%# trabalhar com os campos nome[type=text], descrição[type=textarea], deseja jogar[type=checkbox], possui jogo[type=checkbox], lista da plataforma[type=select], lista de desenvolvedires[type=select], lista de engines[type=select] %>
+
+<h1>Jogos</h1>
+
+<%# formulário de inserção %>
+
+<form>
+  <div>
+    <label for="nome">Nome do jogo</label>
+    <input type="text" name="nome" id="nome" required />
+  </div>
+  <div>
+    <label for="descricao">Descrição</label>
+    <textarea name="descricao" id="descricao" col="50" row="10" required></textarea>
+  </div>
+  <div>
+    <label for="deseja_jogar">Deseja Jogar</label>
+    <input type="checkbox" name="deseja_jogar" id="deseja_jogar" required />
+  </div>
+  <div>
+    <label for="possui_jogo">Possui o jogo</label>
+    <input type="checkbox" name="possui_jogo" id="possui_jogo" required />
+  </div>
+  <div>
+    <label for="plataforma">Escolha a sua plataforma</label>
+    <select name="plataforma" id="plataforma" required>
+      <%# fazer a listagem %>
+      <% @plataformas.each do |plataforma| %>
+        <option value="<%= plataforma.id %>"><%= plataforma.nome%></option>
+      <% end %>
+    </select>
+  </div>
+  <div>
+    <label for="desenvolvedores">Escolha os desenvolvedores</label>
+    <select name="desenvolvedores[]" id="desenvolvedores" required>
+      <%# TODO: Listar todos os desenvolvedores %>
+    </select>
+  </div>
+  <div>
+    <label for="engine">Engine de desenvolvimento</label>
+    <select name="engine" id="engine" required>
+      <% @engines.each do |engine| %>
+        <option value="<%= engine.id %>"><%= engine.nome %></option>
+      <% end %>
+    </select>
+  </div>
+  <div>
+    <button type="submit" formaction="" formmethod="POST">CAdastrar Jogo</button>
+  </div>
+</form>
+
+<%# visualização de dados %>
+
