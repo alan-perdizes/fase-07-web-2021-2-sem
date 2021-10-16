@@ -1,0 +1,43 @@
+<h1>Desenvolvedores</h1>
+
+<%# TODO: criar um arquivo com a extensão erb chamada form e copiar todo o conteudo do formulário %>
+<form>
+  <div>
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" required />
+  </div>
+  <div>
+    <label for="ano_fundacao">ano_</label>
+    <input type="number" name="ano_fundacao" id="ano_fundacao" required />
+  </div>
+  <div>
+    <button 
+      type="submit"
+      formaction="/desenvolvedores"
+      formmethod="POST"
+    >
+      Adicionar Desenvolvedores
+    </button>
+  </div>
+</form>
+
+<% unless @desenvolvedores.empty? %>
+  <table>
+    <thead>
+      <tr>
+        <th>id</th>
+        <th>nome</th>
+        <th>ano de fundação</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @desenvolvedores.each do |desenvolvedor| %>
+        <tr>
+          <td><%= desenvolvedor[:id] %></td>
+          <td><%= desenvolvedor[:nome] %></td>
+          <td><%= desenvolvedor[:ano_fundacao] %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+<% end %>

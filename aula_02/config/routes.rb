@@ -1,10 +1,10 @@
 
 require_relative '../model/plataforma'
 require_relative '../model/engine'
-# TODO: fazer a importação da model de desenvolvedores
+require_relative '../model/desenvolvedor'
 
 get "/" do
-  return "Hello World"
+  erb :index
 end
 
 get "/plataformas" do
@@ -34,8 +34,18 @@ end
 get '/jogos' do
   @plataformas = Plataforma.all
   @engines = Engine.all
-  # TODO: Pegar todo os desenvolvedores do banco de dados
+  @desenvolvedores = Desenvolvedor.all
   erb :'jogos/index'
 end
 
-# TODO: criar a rota dos desenvolvedores no mesmo esquema da plataforma e das engines
+get '/desenvolvedores' do
+  @desenvolvedores = Desenvolvedor.all
+
+  erb :'desenvolvedor/index'
+end
+
+post '/desenvolvedores' do
+  Desenvolvedor.create(nome: params[:nome], ano_funcacao: params[:ano_funcacao])
+
+  redirect '/desenvolvedores'
+end

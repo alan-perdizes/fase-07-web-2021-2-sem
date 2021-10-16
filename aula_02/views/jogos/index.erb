@@ -3,7 +3,7 @@
 <h1>Jogos</h1>
 
 <%# formulário de inserção %>
-
+<%# TODO: criar um arquivo com a extensão erb chamada form e copiar todo o conteudo do formulário %>
 <form>
   <div>
     <label for="nome">Nome do jogo</label>
@@ -33,7 +33,10 @@
   <div>
     <label for="desenvolvedores">Escolha os desenvolvedores</label>
     <select name="desenvolvedores[]" id="desenvolvedores" required>
-      <%# TODO: Listar todos os desenvolvedores %>
+      <% @desenvolvedores.each do |desenvolvedor| %>
+        <option value="<%= desenvolvedor.id %>"><%= desenvolvedor.nome%></option>
+      <% end %>
+      <%# https://github.com/alan-perdizes/fase-07-web-2021-2-sem %>
     </select>
   </div>
   <div>
@@ -50,4 +53,4 @@
 </form>
 
 <%# visualização de dados %>
-
+<%# TODO: Fazer a visualização dos dados com tabelas %>

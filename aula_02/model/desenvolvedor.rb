@@ -1,2 +1,2 @@
-class Desenvolvedor < Sequel::Model
+class Desenvolvedor < Sequel::Model(:desenvolvedores)
 end
